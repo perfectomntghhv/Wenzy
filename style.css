@@ -1,0 +1,97 @@
+/* Base layout and background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3e5f5; /* soft purple */
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Centered content container */
+.content {
+    text-align: center;
+    margin-top: 10vh;
+    position: relative;
+    z-index: 2;
+}
+
+/* Heading style */
+h1 {
+    color: #6a1b9a;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Button style */
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #ab47bc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #8e24aa;
+}
+
+/* Hidden element toggler */
+.hidden {
+    display: none;
+}
+
+/* Capsule note style */
+#capsuleMessage {
+    margin-top: 30px;
+    animation: pop 0.5s ease-out;
+}
+
+.capsule-note {
+    background-color: #fff3e0;
+    border: 2px solid #ce93d8;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 500px;
+    font-size: 18px;
+    color: #4a148c;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(106, 27, 154, 0.2);
+}
+
+/* Flower style and animation */
+.flower {
+    position: absolute;
+    top: -50px;
+    z-index: 1;
+    animation: fall linear forwards;
+    user-select: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Capsule message animation */
+@keyframes pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
