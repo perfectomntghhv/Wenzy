@@ -1,18 +1,20 @@
-/* Background & global styles */
+/* General styles */
 body {
-  background: linear-gradient(to bottom right, #e4c1f9, #f9f1fc);
-  overflow: hidden;
-  position: relative;
-  height: 100vh;
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
+  padding: 0;
+  background: linear-gradient(to bottom right, #e9d5f3, #fbeaff);
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  color: #4c0070;
 }
 
-/* Flower animation */
+/* Floating flower animation */
 .flower {
   position: absolute;
-  top: -40px;
   font-size: 24px;
+  top: -40px;
   animation: fall linear infinite;
   z-index: 0;
 }
@@ -23,68 +25,47 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0.4;
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
   }
 }
 
-/* Envelope container */
-.envelope-container {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  text-align: center;
+/* Container for button and message */
+.container {
+  position: relative;
   z-index: 10;
-}
-
-/* Envelope body */
-.envelope {
-  position: relative;
-  width: 120px;
-  height: 80px;
-  background-color: #fff;
-  border: 2px solid #a74caf;
-  border-radius: 5px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
-
-/* Envelope flap */
-.envelope .flap {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 60px solid transparent;
-  border-right: 60px solid transparent;
-  border-bottom: 40px solid #a74caf;
-  z-index: 1;
-}
-
-/* Click text */
-.click-text {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #662d91;
-  font-size: 16px;
-}
-
-/* Message box */
-.message-box {
-  margin-top: 100px;
-  max-width: 300px;
-  padding: 20px;
-  background-color: #fff;
-  border: 2px solid #a74caf;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  color: #662d91;
-  font-size: 18px;
-  z-index: 20;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 25%;
+}
+
+/* Prescription button */
+button {
+  background-color: #a64ac9;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #8e3bbd;
+}
+
+/* Message display */
+#message {
+  margin-top: 30px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  color: #4c0070;
+  border: 2px solid #d89ce0;
 }
