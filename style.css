@@ -1,97 +1,103 @@
-/* Base layout and background */
+/* Base styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f3e5f5; /* soft purple */
-    overflow-x: hidden;
-    position: relative;
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to bottom right, #e4c1f9, #f9f1fc);
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
 }
 
-/* Centered content container */
-.content {
-    text-align: center;
-    margin-top: 10vh;
-    position: relative;
-    z-index: 2;
+/* Envelope container */
+.envelope-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  text-align: center;
 }
 
-/* Heading style */
-h1 {
-    color: #6a1b9a;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+/* Envelope visual */
+.envelope {
+  position: relative;
+  width: 120px;
+  height: 80px;
+  background-color: #fff;
+  border: 2px solid #a74caf;
+  border-radius: 5px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Button style */
-button {
-    padding: 12px 24px;
-    font-size: 18px;
-    background-color: #ab47bc;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
+.envelope:hover {
+  transform: scale(1.05);
 }
 
-button:hover {
-    background-color: #8e24aa;
+/* Flap */
+.envelope .flap {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 40px solid #a74caf;
 }
 
-/* Hidden element toggler */
-.hidden {
-    display: none;
+/* Click prompt */
+.click-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #5a2a7b;
+  font-weight: bold;
 }
 
-/* Capsule note style */
-#capsuleMessage {
-    margin-top: 30px;
-    animation: pop 0.5s ease-out;
+/* Message box */
+.message-box {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 2px solid #a74caf;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: 500;
+  color: #5a2a7b;
+  max-width: 80%;
+  display: none;
+  text-align: center;
+  animation: pop 0.3s ease-out forwards;
 }
 
-.capsule-note {
-    background-color: #fff3e0;
-    border: 2px solid #ce93d8;
-    padding: 20px;
-    margin: 0 auto;
-    width: 80%;
-    max-width: 500px;
-    font-size: 18px;
-    color: #4a148c;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(106, 27, 154, 0.2);
+@keyframes pop {
+  from {
+    transform: translateX(-50%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
 }
 
-/* Flower style and animation */
+/* Flower emojis */
 .flower {
-    position: absolute;
-    top: -50px;
-    z-index: 1;
-    animation: fall linear forwards;
-    user-select: none;
+  position: absolute;
+  top: -40px;
+  font-size: 24px;
+  animation: fall linear infinite;
+  z-index: 0;
 }
 
 @keyframes fall {
-    0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-/* Capsule message animation */
-@keyframes pop {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
 }
