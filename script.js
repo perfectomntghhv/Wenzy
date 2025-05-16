@@ -10,7 +10,6 @@ let allMessages = [
   "You're the human form of vitamin D. ☀️",
   "Finals fear you. Trust that!",
   "You're too compound to be broken!",
-  "The world is lucky to have a healer like you.",
   "You're the formula for happiness.",
   "Your strength is stronger than any prescription.",
   "You're proof that brains and beauty belong together.",
