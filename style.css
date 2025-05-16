@@ -1,4 +1,11 @@
-/* Base styles */
+body {
+  background: linear-gradient(to bottom right, #e4c1f9, #f9f1fc);
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}/* Base styles */
 body {
   margin: 0;
   padding: 0;
