@@ -1,23 +1,52 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dr Kudzi's Kapsules 💊</title>
+  <title>Dr. Kudzi's Prescriptions 💊</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="envelope-container" onclick="showMessage()">
-    <div class="envelope">
-      <div class="flap"></div>
-      <div class="body"></div>
-    </div>
-    <p class="click-text">Click the envelope 💌</p>
+
+  <!-- Floating flowers -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const flower = document.createElement("div");
+      flower.classList.add("flower");
+      flower.textContent = "🌸";
+      flower.style.left = `${Math.random() * 100}vw`;
+      flower.style.animationDuration = `${3 + Math.random() * 5}s`;
+      flower.style.fontSize = `${16 + Math.random() * 20}px`;
+      document.body.appendChild(flower);
+    }
+  </script>
+
+  <!-- Main content -->
+  <div class="container">
+    <button onclick="showMessage()">Click me for a prescription 💊</button>
+    <div id="message"></div>
   </div>
 
-  <div id="messageBox" class="message-box"></div>
+  <!-- Message logic -->
+  <script>
+    const messages = [
+      "You're a pharmacy of positivity, wrapped in brilliance.",
+      "Take one smile and call it a cure 🌼.",
+      "You're stronger than caffeine on exam day ☕💪.",
+      "Even penicillin couldn’t cure how amazing you are!",
+      "Keep going, Dr. Future – you're halfway to healing the world!",
+      "You're making paracetamol look weak with how powerful your energy is!",
+      "Brains + kindness = unstoppable. You’ve got both.",
+      "Caution: You radiate encouragement. May cause joy.",
+      "Every capsule you open is a reminder: you're doing amazing.",
+      "Prescribed: One deep breath. Side effect: unstoppable confidence!"
+    ];
 
-  <script src="script.js"></script>
+    function showMessage() {
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      document.getElementById("message").textContent = messages[randomIndex];
+    }
+  </script>
+
 </body>
 </html>
