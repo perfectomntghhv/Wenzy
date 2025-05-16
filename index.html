@@ -21,13 +21,11 @@
     }
   </script>
 
-  <!-- Main content -->
   <div class="container">
-    <button onclick="showMessage()">Click me for a prescription 💊</button>
-    <div id="message"></div>
+    <button id="showMessageBtn">Click the envelope 💌</button>
+    <div id="messageBox" class="message-box"></div>
   </div>
 
-  <!-- Message logic -->
   <script>
     const messages = [
       "You're a pharmacy of positivity, wrapped in brilliance.",
@@ -42,10 +40,12 @@
       "Prescribed: One deep breath. Side effect: unstoppable confidence!"
     ];
 
-    function showMessage() {
+    document.getElementById("showMessageBtn").addEventListener("click", () => {
       const randomIndex = Math.floor(Math.random() * messages.length);
-      document.getElementById("message").textContent = messages[randomIndex];
-    }
+      const messageBox = document.getElementById("messageBox");
+      messageBox.textContent = messages[randomIndex];
+      messageBox.style.display = 'block';
+    });
   </script>
 
 </body>
