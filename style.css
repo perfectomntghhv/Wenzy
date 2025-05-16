@@ -1,97 +1,62 @@
-/* Base layout and background */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f3e5f5; /* soft purple */
-    overflow-x: hidden;
-    position: relative;
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #e0b3ff, #f9e0ff);
+  overflow-x: hidden;
 }
 
-/* Centered content container */
-.content {
-    text-align: center;
-    margin-top: 10vh;
-    position: relative;
-    z-index: 2;
+.container {
+  text-align: center;
+  margin-top: 20vh;
+  position: relative;
+  z-index: 2;
 }
 
-/* Heading style */
-h1 {
-    color: #6a1b9a;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Button style */
 button {
-    padding: 12px 24px;
-    font-size: 18px;
-    background-color: #ab47bc;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
+  background-color: #a64ac9;
+  color: white;
+  border: none;
+  padding: 18px 30px;
+  font-size: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
 }
 
 button:hover {
-    background-color: #8e24aa;
+  background-color: #902cc6;
 }
 
-/* Hidden element toggler */
-.hidden {
-    display: none;
+.message-box {
+  margin-top: 30px;
+  padding: 25px;
+  border: 3px solid #a64ac9;
+  border-radius: 20px;
+  display: none;
+  background-color: #ffffffde;
+  color: #5e2874;
+  font-size: 24px;
+  line-height: 1.6;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
 }
 
-/* Capsule note style */
-#capsuleMessage {
-    margin-top: 30px;
-    animation: pop 0.5s ease-out;
-}
-
-.capsule-note {
-    background-color: #fff3e0;
-    border: 2px solid #ce93d8;
-    padding: 20px;
-    margin: 0 auto;
-    width: 80%;
-    max-width: 500px;
-    font-size: 18px;
-    color: #4a148c;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(106, 27, 154, 0.2);
-}
-
-/* Flower style and animation */
+/* Flower animation */
 .flower {
-    position: absolute;
-    top: -50px;
-    z-index: 1;
-    animation: fall linear forwards;
-    user-select: none;
+  position: absolute;
+  top: -50px;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 @keyframes fall {
-    0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-/* Capsule message animation */
-@keyframes pop {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  to {
+    transform: translateY(120vh) rotate(360deg);
+  }
 }
