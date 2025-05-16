@@ -3,51 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dr. Kudzi's Prescriptions 💊</title>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+  <title>Dr. Kudzi's Prescription</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <h1>Dr. Kudzi’s Prescription 💊</h1>
+  
+  <button onclick="showMessage()">Click for a prescription</button>
+  
+  <div class="message-box" id="messageBox">Click the button to receive your dose of encouragement 💜</div>
 
-  <!-- Floating flowers -->
+  <!-- Falling flower emojis (optional) -->
   <script>
-    for (let i = 0; i < 30; i++) {
+    // Show random prescription message
+    const messages = [
+      "You're a pharmacy of positivity, wrapped in brilliance.",
+      "Take one smile, repeat as needed 💊",
+      "Dr. Kudzi says: you're amazing—no refills needed!",
+      "You're the prescription the world didn't know it needed.",
+      "Caution: too much brilliance in one person 💥",
+      "Certified mood booster 🩷",
+      "Refill your confidence—you're doing great!",
+      "Warning: may cause spontaneous joy!",
+      "Dr. Kudzi: Prescribing laughter and light!",
+      "You're the healing energy people need!"
+    ];
+
+    function showMessage() {
+      const msgBox = document.getElementById("messageBox");
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      msgBox.textContent = messages[randomIndex];
+    }
+
+    // Optional flower animation
+    function createFlower() {
       const flower = document.createElement("div");
       flower.classList.add("flower");
       flower.textContent = "🌸";
-      flower.style.left = `${Math.random() * 100}vw`;
-      flower.style.animationDuration = `${3 + Math.random() * 5}s`;
-      flower.style.fontSize = `${16 + Math.random() * 20}px`;
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.animationDuration = 4 + Math.random() * 3 + "s";
       document.body.appendChild(flower);
+      setTimeout(() => {
+        flower.remove();
+      }, 7000);
     }
+
+    setInterval(createFlower, 500);
   </script>
-
-  <div class="container">
-    <button id="showMessageBtn">Click for a prescription 💊</button>
-    <div id="messageBox" class="message-box"></div>
-  </div>
-
-  <script>
-    const messages = [
-      "You're a pharmacy of positivity, wrapped in brilliance.",
-      "Take one smile and call it a cure 🌼.",
-      "You're stronger than caffeine on exam day ☕💪.",
-      "Even penicillin couldn’t cure how amazing you are!",
-      "Keep going, Dr. Future – you're halfway to healing the world!",
-      "You're making paracetamol look weak with how powerful your energy is!",
-      "Brains + kindness = unstoppable. You’ve got both.",
-      "Caution: You radiate encouragement. May cause joy.",
-      "Every capsule you open is a reminder: you're doing amazing.",
-      "Prescribed: One deep breath. Side effect: unstoppable confidence!"
-    ];
-
-    document.getElementById("showMessageBtn").addEventListener("click", () => {
-      const randomIndex = Math.floor(Math.random() * messages.length);
-      const messageBox = document.getElementById("messageBox");
-      messageBox.textContent = messages[randomIndex];
-      messageBox.style.display = 'block';
-    });
-  </script>
-
 </body>
 </html>
