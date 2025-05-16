@@ -1,71 +1,97 @@
-/* General styles */
+/* Base layout and background */
 body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom right, #e9d5f3, #fbeaff);
-  height: 100vh;
-  overflow: hidden;
-  font-family: 'Segoe UI', sans-serif;
-  position: relative;
-  color: #4c0070;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3e5f5; /* soft purple */
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
 }
 
-/* Floating flower animation */
-.flower {
-  position: absolute;
-  font-size: 24px;
-  top: -40px;
-  animation: fall linear infinite;
-  z-index: 0;
+/* Centered content container */
+.content {
+    text-align: center;
+    margin-top: 10vh;
+    position: relative;
+    z-index: 2;
 }
 
-@keyframes fall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
+/* Heading style */
+h1 {
+    color: #6a1b9a;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-/* Container for button and message */
-.container {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  top: 25%;
-}
-
-/* Prescription button */
+/* Button style */
 button {
-  background-color: #a64ac9;
-  color: white;
-  border: none;
-  padding: 15px 25px;
-  font-size: 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #ab47bc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
-  background-color: #8e3bbd;
+    background-color: #8e24aa;
 }
 
-/* Message display */
-#message {
-  margin-top: 30px;
-  font-size: 20px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 12px;
-  max-width: 350px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  color: #4c0070;
-  border: 2px solid #d89ce0;
+/* Hidden element toggler */
+.hidden {
+    display: none;
+}
+
+/* Capsule note style */
+#capsuleMessage {
+    margin-top: 30px;
+    animation: pop 0.5s ease-out;
+}
+
+.capsule-note {
+    background-color: #fff3e0;
+    border: 2px solid #ce93d8;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 500px;
+    font-size: 18px;
+    color: #4a148c;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(106, 27, 154, 0.2);
+}
+
+/* Flower style and animation */
+.flower {
+    position: absolute;
+    top: -50px;
+    z-index: 1;
+    animation: fall linear forwards;
+    user-select: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Capsule message animation */
+@keyframes pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
