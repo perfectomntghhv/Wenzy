@@ -1,62 +1,66 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap');
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Baloo 2', cursive;
   background: linear-gradient(to bottom right, #e0b3ff, #f9e0ff);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   overflow-x: hidden;
-}
-
-.container {
-  text-align: center;
-  margin-top: 20vh;
   position: relative;
-  z-index: 2;
 }
 
+/* Prescription Button */
 button {
-  background-color: #a64ac9;
+  background-color: #9b59b6;
   color: white;
   border: none;
-  padding: 18px 30px;
-  font-size: 20px;
-  border-radius: 12px;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #902cc6;
+  background-color: #8e44ad;
+  transform: scale(1.05);
 }
 
+/* Message Box */
 .message-box {
   margin-top: 30px;
-  padding: 25px;
-  border: 3px solid #a64ac9;
+  max-width: 80%;
+  background: white;
+  color: #5e3370;
+  border: 2px solid #d7b4f3;
+  padding: 20px;
   border-radius: 20px;
-  display: none;
-  background-color: #ffffffde;
-  color: #5e2874;
-  font-size: 24px;
-  line-height: 1.6;
-  max-width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  backdrop-filter: blur(5px);
+  font-size: 1.3em;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Flower animation */
+/* Optional: Flower animation container */
 .flower {
   position: absolute;
   top: -50px;
-  animation-name: fall;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  font-size: 24px;
+  animation: fall 6s linear infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes fall {
   to {
-    transform: translateY(120vh) rotate(360deg);
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
   }
 }
